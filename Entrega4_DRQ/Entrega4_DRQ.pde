@@ -7,14 +7,16 @@ float angleHour = 0;
 float angleMinute = 0;
 float initialAngleM = -PI/2;
 
-float angleSeconds;
-float initialAngleS;
+float angleSeconds = 0;
 
 float hRadius = 250;
 float hSize = 500;
 
 float mRadius = hRadius/2;
 float mSize = 250;
+
+float sRadius = hRadius/6;
+float sSize;
 
 float hCircSin = 125;
 float hCircCos = 216.5;
@@ -42,6 +44,8 @@ void draw() {
   s = second();
   
   translate(width/2, height/2);
+   
+  triangle(0, -300, 25, -330, -25, -330); 
    
  //Para lograr rotar el circulo exterior de la hora toca saber cuanto debe rotar la hora
  //por ello, se debe relacionar la varible de h (hora del cumputador) por 30 grados que es 
@@ -92,23 +96,31 @@ push();
 //6 * 60 minutos = 360 grados -> el circulo se mueve 6 grados cada minuto
  angleMinute = (radians(6 * m));
 
-//Rotación del circulo de minutos con relacion a las 12h de un reloj normal
+//Rotación del circulo de Minutos con relacion a las 12h de un reloj normal
  rotate(initialAngleM + angleMinute);
 
-//Circulo de minutos
+//Circulo de Minutos
  fill(0, 150, 255, 100);
  stroke(255);
  ellipse(mRadius, 0, mRadius*2, mRadius*2);
  
 //Linea para facilitar leer los minutos
-line (-mRadius/2, 0, mRadius*2, 0);
+ line (-mRadius/2, 0, mRadius*2, 0);
+ 
+//circulo segundero
+//6 * 60 segundos = 360 grados -> el circulo se mueve 6 grados cada segundo
+ angleSeconds = (radians(6 * s));
 
- 
- 
-  
+//Rotación del circulo de Segundos con relacion a las 12h de un reloj normal
+ rotate(initialAngleM + angleSeconds);
+
+//Circulo de Segundos
+ fill(0, 150, 255, 100);
+ stroke(255);
+ ellipse(0, 250, sRadius, sRadius);
+
 pop();
 
 
-angleMinute +=0.02 ;
 
 }
