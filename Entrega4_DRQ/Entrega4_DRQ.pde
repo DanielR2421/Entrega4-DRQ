@@ -24,8 +24,6 @@ float hCircCos = 216.5;
 float mCircSin = 6.5;
 float mCircCos = 62.15;
 
-String timeString;
-
 
  void setup() {
 
@@ -37,7 +35,7 @@ String timeString;
 
 void draw() {
 
-  background(0);
+  background(#0A192F);
   
   h = hour(); 
   m = minute();
@@ -45,6 +43,7 @@ void draw() {
   
   translate(width/2, height/2);
    
+  fill(#FF1744);
   triangle(0, -300, 25, -330, -25, -330); 
    
  //Para lograr rotar el circulo exterior de la hora toca saber cuanto debe rotar la hora
@@ -89,7 +88,7 @@ void draw() {
 push();
 
 // Punto de pivote
- fill(255, 0, 0);
+ fill(#FF1744);
  noStroke();
  ellipse(0, 0, 10, 10);
 
@@ -100,7 +99,7 @@ push();
  rotate(initialAngleM + angleMinute);
 
 //Circulo de Minutos
- fill(0, 150, 255, 100);
+ fill(#3A86FF, 100);
  stroke(255);
  ellipse(mRadius, 0, mRadius*2, mRadius*2);
  
@@ -115,7 +114,7 @@ push();
  rotate(initialAngleM + angleSeconds);
 
 //Circulo de Segundos
- fill(0, 150, 255, 100);
+ fill(#00A8CC, 100);
  stroke(255);
  ellipse(0, 250, sRadius, sRadius);
 
