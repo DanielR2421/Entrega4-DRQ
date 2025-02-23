@@ -85,7 +85,7 @@ background(#0A192F);
 
  ellipseMode(CENTER);
  
-//Circulo Minutero
+//Circulo Minutero -> Use la funciòn push y pop para guardar el dibujo de los minuteros y segunderos por fuera sin verse afectados por la rotaciòn del circulo de las horas
 push();
 
 // Punto de pivote
