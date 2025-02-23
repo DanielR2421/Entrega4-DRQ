@@ -35,7 +35,7 @@ float mCircCos = 62.15;
 
 void draw() {
 
-background(0);
+background(#0A192F);
   
  h = hour(); 
  m = minute();
