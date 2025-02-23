@@ -3,7 +3,12 @@ int m;
 int s;
 
 float angleHour = 0;
-float angleMinute = -PI/2;
+
+float angleMinute = 0;
+float initialAngleM = -PI/2;
+
+float angleSeconds;
+float initialAngleS;
 
 float hRadius = 250;
 float hSize = 500;
@@ -14,6 +19,8 @@ float mSize = 250;
 float hCircSin = 125;
 float hCircCos = 216.5;
 
+float mCircSin = 6.5;
+float mCircCos = 62.15;
 
 String timeString;
 
@@ -41,7 +48,7 @@ void draw() {
  //lo que rota una manecilla de un reloj en una hora. El -1 es para que rote en dirección clockwise
  angleHour = radians(h * 30 * -1);
   
- //rotate(angleHour);
+ rotate(angleHour);
 
  //Circulo de horas
  noFill();
@@ -75,7 +82,6 @@ void draw() {
  ellipseMode(CENTER);
  
 //Circulo Minutero
- //ellipse(mRadius, 0, mSize, mSize);
 push();
 
 // Punto de pivote
@@ -83,17 +89,19 @@ push();
  noStroke();
  ellipse(0, 0, 10, 10);
 
+//6 * 60 minutos = 360 grados -> el circulo se mueve 6 grados cada minuto
  angleMinute = (radians(6 * m));
 
- rotate(angleMinute);
+//Rotación del circulo de minutos con relacion a las 12h de un reloj normal
+ rotate(initialAngleM + angleMinute);
 
-
-
+//Circulo de minutos
  fill(0, 150, 255, 100);
  stroke(255);
  ellipse(mRadius, 0, mRadius*2, mRadius*2);
  
-
+//Linea para facilitar leer los minutos
+line (-mRadius/2, 0, mRadius*2, 0);
 
  
  
