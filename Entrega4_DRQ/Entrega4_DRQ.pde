@@ -35,16 +35,17 @@ float mCircCos = 62.15;
 
 void draw() {
 
-  background(0);
+background(0);
   
-  h = hour(); 
-  m = minute();
-  s = second();
+ h = hour(); 
+ m = minute();
+ s = second();
   
   translate(width/2, height/2);
    
-  fill(#FF1744);
-  triangle(0, -300, 25, -330, -25, -330); 
+ //Con el trangulo se puede ver el numero de la hora actual
+ fill(#FF1744);
+ triangle(0, -300, 25, -330, -25, -330); 
    
  //Para lograr rotar el circulo exterior de la hora toca saber cuanto debe rotar la hora
  //por ello, se debe relacionar la varible de h (hora del cumputador) por 30 grados que es 
